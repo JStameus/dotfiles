@@ -12,104 +12,55 @@
 #--------------------------------
 font:
   normal:
-    family: Iosevka Term
+    family: JetBrains Mono
     style: Regular
 
   bold:
-    family: Iosevka Term
+    family: JetBrains Mono
     style: Bold
 
   italic:
-    family: Iosevka Term
+    family: JetBrains Mono
     style: Italic
 
   bold italic:
-    family: Iosevka Term
+    family: JetBrains Mono
     style: Bold Italic
 
-  size: 13
+  size: 12
 #--------------------------------
 
 # COLOR & OPACITY
 #--------------------------------
 
 background_opacity: 0.98
-# PAVILION
-#colors:
-#  primary:
-#    background: '#1e252a'
-#    foreground: '#9bafb5'
-#  
-#  normal:
-#    black: '#242729'
-#    red: '#995151'
-#    green: '#5fb475'
-#    yellow:  '#cdb379'
-#    blue:    '#638893'
-#    magenta: '#9e75ac'
-#    cyan:    '#89ae9f'
-#    white:   '#d1d1d1'
-#
-#  bright:
-#    black: '#242729'
-#    red: '#995151'
-#    green: '#5fb475'
-#    yellow:  '#cdb379'
-#    blue:    '#638893'
-#    magenta: '#9e75ac'
-#    cyan:    '#89ae9f'
-#    white:   '#d1d1d1'
     
 # SKALVER
-#colors:
-#  primary:
-#    background: '#262d34'
-#    foreground: '#a2d5cf'
-#  normal: 
-#    black: '#373b41'
-#    red: '#c45a71'
-#    green: '#76ad87'
-#    yellow: '#c7aa7c'
-#    blue: '#7796b9'
-#    magenta: '#af8cb1'
-#    cyan: '#81bcb3'
-#    white: '#97afb1'
-
-#  bright:
-#    black: '#22383c'
-#    red: '#db4560'
-#    green: '#84c28d'
-#    yellow: '#f0b77b'
-#    blue: '#74acda'
-#    magenta: '#c893cb'
-#    cyan: '#81d5c8'
-#    white: '#596673'	
-
-# GRUVBOX
 colors:
   primary:
-    background: '0x282828'
-    foreground: '0xdfbf8e'
+    background: '#252d33'
+    foreground: '#e5e0d8'
 
   normal:
-    black:   '0x665c54'
-    red:     '0xea6962'
-    green:   '0xa9b665'
-    yellow:  '0xe78a4e'
-    blue:    '0x7daea3'
-    magenta: '0xd3869b'
-    cyan:    '0x89b482'
-    white:   '0xdfbf8e'
+    black:   '#3e413f'
+    red:     '#cd5148'
+    green:   '#86bc90'
+    yellow:  '#e7b867'
+    blue:    '#6ea0ac'
+    magenta: '#c27894'
+    cyan:    '#7ec4b7'
+    white:   '#d2c7ba'
 
   bright:
-    black:   '0x928374'
-    red:     '0xea6962'
-    green:   '0xa9b665'
-    yellow:  '0xe3a84e'
-    blue:    '0x7daea3'
-    magenta: '0xd3869b'
-    cyan:    '0x89b482'
-    white:   '0xdfbf8e'
+    black:   '#3e413f'
+    red:     '#cd5148'
+    green:   '#86bc90'
+    yellow:  '#e08c55'
+    blue:    '#6ea0ac'
+    magenta: '#c27894'
+    cyan:    '#7ec4b7'
+    white:   '#d2c7ba'
+   
 #--------------------------------
 
 # CURSOR
@@ -118,4 +69,12 @@ colors:
 #  style:
 #    shape: Beam
 #    blinking: Always
+#--------------------------------
+
+# WINDOW 
+#--------------------------------
+window:
+  padding:
+    x: 2
+    y: 2
 #--------------------------------
