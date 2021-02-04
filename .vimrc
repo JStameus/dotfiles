@@ -31,8 +31,10 @@ set wildmenu
 filetype on
 syntax on
 
-" Setting default tab size to 4
+" Setting default tab size to 4 & replacing tabs with spaces
 set tabstop=4
+set expandtab
+" Enabling filetype autoindentation
 filetype plugin indent on 
 "+---------------------------------+
 
@@ -69,7 +71,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'kjwon15/vim-transparent'
 
 " Automatically show Vim's autocomplete menu while typing.
-Plug 'vim-scripts/AutoComplPop'
+" Plug 'vim-scripts/AutoComplPop'
 
 " LANGUAGE-SPECIFIC 
 " Rust
@@ -88,11 +90,23 @@ map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<
 "+---------------------------------+
 " SNIPPETS 
 "+---------------------------------+
-" HTML Boilerplate
-nnoremap ,html :-1read $HOME/.vim/snippets/boilerplate.html<CR>4jf>a
+" GENERIC
+" Automatically create matching braces etc.
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {}<Left>
+inoremap < <><Left>
 
-" JavaScript Console Log
+" HTML
+" Standard Boilerplate
+nnoremap ,html :-1read $HOME/.vim/snippets/boilerplate.html<CR>4jf>a
+" Create a matching end tag
+nnoremap ,het wbya<ewpbi/<Esc>ewbba
+
+" JAVASCRIPT 
+" Console Log
 nnoremap ,jsl :-1read $HOME/.vim/snippets/jsconsolelog.js<CR>f(a
+
 "+---------------------------------+
 
 "+---------------------------------+
@@ -107,5 +121,6 @@ set nospell
 " Setting up spell checking and popup menu
 set complete+=kspell	  
 set completeopt=menuone,noinsert,preview
+" Suppresses unnecessary 'hit Enter' prompts
 set shortmess+=c
 "+---------------------------------+
