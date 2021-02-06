@@ -11,31 +11,52 @@
 "+---------------------------------+
 " BASIC FUNCTIONALITY  
 "+---------------------------------+
-" Line numbers and ruler
+" Line numbers 
 set number 
 set relativenumber
-set ruler
 
-" Displays key presses
+" Always show tabline
+"set showtabline=2
+
+" Show matching braces 
+set showmatch
+
+" Displaying position & commands on status bar
+set ruler
 set showcmd
 
+" Setting the cursor boundaries for scrolling
+set scrolloff=5
+
+" Text wrapping
+set linebreak
+set showbreak=...
+set textwidth=80
+
 " Searching and highlighting
-set is 
 set hlsearch 
+set incsearch 
+set ignorecase
+set smartcase
 
 " Searching for files & buffers
 set path+=**
 set wildmenu
+
+" Enabling switching between buffers without saving
+set hidden
 
 " Syntax highlighting and filetype recognition
 filetype on
 syntax on
 
 " Setting default tab size to 4 & replacing tabs with spaces
+set shiftwidth=4
 set tabstop=4
 set expandtab
-" Enabling filetype autoindentation
-filetype plugin indent on 
+
+" Enabling filetype detection
+filetype plugin on 
 "+---------------------------------+
 
 "+---------------------------------+
@@ -43,7 +64,7 @@ filetype plugin indent on
 "+---------------------------------+
 " Background Color Light/Dark
 set background=dark
-colorscheme skalver 
+colorscheme pavilion 
 
 " Colorscheme True Color Fixes
 set t_Co=256
@@ -58,6 +79,9 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 " Don't forget to run :PlugInstall after tweaking the setup! 
 call plug#begin('~/.vim/plugged')
 
+" Enable transparent background
+Plug 'kjwon15/vim-transparent'
+
 " Conquer of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Installed: coc-rust-analyzer
@@ -66,12 +90,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Installed: coc-css
 " Installed: coc-emmet
 " Installed: coc-vetur
-
-" Enable transparent background
-Plug 'kjwon15/vim-transparent'
-
-" Automatically show Vim's autocomplete menu while typing.
-" Plug 'vim-scripts/AutoComplPop'
 
 " LANGUAGE-SPECIFIC 
 " Rust
@@ -83,6 +101,8 @@ call plug#end()
 "+---------------------------------+
 " CUSTOM COMMANDS & KEYBINDS
 "+---------------------------------+
+" TODO: Should , be my leader key? Explore the options here.
+
 " F3: Display information about syntax highlighting
 map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
 "+---------------------------------
