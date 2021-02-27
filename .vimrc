@@ -11,12 +11,18 @@
 "+---------------------------------+
 " BASIC FUNCTIONALITY  
 "+---------------------------------+
+set nocompatible
+
 " Line numbers 
 set number 
 set relativenumber
+set cursorline
 
-" Always show tabline
-"set showtabline=2
+" Show tabline
+set showtabline=1
+
+" Show status line
+set laststatus=2
 
 " Show matching braces 
 set showmatch
@@ -36,8 +42,11 @@ set textwidth=80
 " Searching and highlighting
 set hlsearch 
 set incsearch 
+
+" Case-sensitivity options
 set ignorecase
 set smartcase
+set infercase
 
 " Searching for files & buffers
 set path+=**
@@ -57,6 +66,9 @@ set expandtab
 
 " Enabling filetype detection
 filetype plugin on 
+
+" Re-binding the Leader key
+let mapleader=" "
 "+---------------------------------+
 
 "+---------------------------------+
@@ -64,9 +76,9 @@ filetype plugin on
 "+---------------------------------+
 " Background Color Light/Dark
 set background=dark
-colorscheme pavilion 
+colorscheme derva
 
-" Colorscheme True Color Fixes
+" True Color Detection Fix
 set t_Co=256
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -92,8 +104,15 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Installed: coc-vetur
 
 " LANGUAGE-SPECIFIC 
-" Rust
+" Rust: Enables syntax-highlighting, formatting etc
 Plug 'rust-lang/rust.vim'
+" JavaScript: Enables better syntax highlighting
+Plug 'yuezk/vim-js'
+" Python: Enables better syntax highlighting
+Plug 'vim-python/python-syntax'
+
+" Vim Wiki
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 "+---------------------------------+
@@ -101,10 +120,10 @@ call plug#end()
 "+---------------------------------+
 " CUSTOM COMMANDS & KEYBINDS
 "+---------------------------------+
-" TODO: Should , be my leader key? Explore the options here.
-
 " F3: Display information about syntax highlighting
 map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
+
+nnoremap <Leader>hh :nohls<CR>
 "+---------------------------------
 
 "+---------------------------------+
@@ -117,15 +136,18 @@ inoremap [ []<Left>
 inoremap { {}<Left>
 inoremap < <><Left>
 
+" Create matching braces and jump to indented block
+nnoremap <Leader>b a<Space>{}<Left><CR><Esc>O
+
 " HTML
-" Standard Boilerplate
-nnoremap ,html :-1read $HOME/.vim/snippets/boilerplate.html<CR>4jf>a
+" Standard HTML Boilerplate
+nnoremap <Leader>html :-1read $HOME/.vim/snippets/boilerplate.html<CR>4jf>a
 " Create a matching end tag
-nnoremap ,het wbya<ewpbi/<Esc>ewbba
+nnoremap <Leader>het wbya<ewpbi/<Esc>ewbba
 
 " JAVASCRIPT 
 " Console Log
-nnoremap ,jsl :-1read $HOME/.vim/snippets/jsconsolelog.js<CR>f(a
+nnoremap <Leader>jsl :-1read $HOME/.vim/snippets/jsconsolelog.js<CR>f(a
 
 "+---------------------------------+
 

@@ -33,60 +33,33 @@ font:
 # COLOR & OPACITY
 #--------------------------------
 
-background_opacity: 0.98
-    
-# SKALVER
-#colors:
-#  primary:
-#    background: '#252d33'
-#    foreground: '#e5e0d8'
+background_opacity: 1
 
-  #  normal:
-  #    black:   '#3e413f'
-  #    red:     '#cd5148'
-  #    green:   '#86bc90'
-  #    yellow:  '#e7b867'
-  #    blue:    '#6ea0ac'
-  #    magenta: '#c27894'
-  #    cyan:    '#7ec4b7'
-  #    white:   '#d2c7ba'
-
-  #  bright:
-  #    black:   '#3e413f'
-  #    red:     '#cd5148'
-  #    green:   '#86bc90'
-  #   yellow:  '#e08c55'
-  #    blue:    '#6ea0ac'
-  #    magenta: '#c27894'
-  #    cyan:    '#7ec4b7'
-  #    white:   '#d2c7ba'
-   
-# PAVILION
+# DERVA
 colors:
   primary:
-    background: '#232a2f'
-    foreground: '#b3d8e0'
+    background: '#292a2d'
+    foreground: '#e5d1aa'
 
   normal:
-    black:   '#2d3236'
-    red:     '#bb495a'
-    green:   '#97d0ab'
-    yellow:  '#d0bf97'
-    blue:    '#8aaecc'
-    magenta: '#c489bd'
-    cyan:    '#8adbce'
-    white:   '#f0f0f0'
+    black:   '#404a48'
+    red:     '#bd5747'
+    green:   '#ccc578'
+    yellow:  '#dfb787'
+    blue:    '#82a6b1'
+    magenta: '#6e6a7b'
+    cyan:    '#709680'
+    white:   '#d3e3e8'
 
   bright:
-    black:   '#404a54'
-    red:     '#bb5353'
-    green:   '#99d097'
-    yellow:  '#d8986d'
-    blue:    '#6ca0b8'
-    magenta: '#cf84c5'
-    cyan:    '#77c2b6'
-    white:   '#afb8b9'
-
+    black:   '#76877d'
+    red:     '#a53f2f'
+    green:   '#a2c89a'
+    yellow:  '#c28f52'
+    blue:    '#728aab'
+    magenta: '#b179a0'
+    cyan:    '#6fa68d'
+    white:   '#726953'
 #--------------------------------
 
 # CURSOR

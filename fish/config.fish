@@ -8,7 +8,7 @@ function fish_prompt
 		set lastStatus (set_color --bold green)"0"(set_color normal)
 	end
 	# Displaying the prompt
-	echo "["(echo $lastStatus)"]"(set_color --bold blue)(basename $PWD)(set_color normal)"/"(set_color --bold red)"|"(set_color --bold bryellow)"|"(set_color --bold green)"| > "   
+	echo "["(echo $lastStatus)"]"(set_color --bold blue)(basename $PWD)(set_color normal)"/"(set_color --bold blue)"|"(set_color --bold red)"|"(set_color --bold green)"| > "   
 end
 #--------------------------------
 
