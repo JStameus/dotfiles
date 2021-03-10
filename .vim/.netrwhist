@@ -1,5 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
-let g:netrw_dirhist_3='/home/joseph/.vim'
-let g:netrw_dirhist_2='/home/joseph/repos/veerwalker'
-let g:netrw_dirhist_1='/home/joseph/.config/alacritty'
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/joseph/repos/schoolwork/class_march_09_2021'
+let g:netrw_dirhist_5='/home/joseph/repos/phasermouse'
+let g:netrw_dirhist_4='/home/joseph/repos/veerwalker/code/json/dialogue'
+let g:netrw_dirhist_3='/home/joseph/repos/hello-phaser'
+let g:netrw_dirhist_2='/home/joseph/repos'
+let g:netrw_dirhist_1='/home/joseph/repos/phasermouse'
+let g:netrw_dirhist_0='/home/joseph/repos/skalver-app/code'
+let g:netrw_dirhist_9='/home/joseph/repos/skalver-app'
+let g:netrw_dirhist_8='/home/joseph/repos/skalver-app/code'
+let g:netrw_dirhist_7='/home/joseph/repos/skalver-app'

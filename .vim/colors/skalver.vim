@@ -15,6 +15,15 @@ endif
 let g:colors_name="skalver"
 
 " ------------------------------------------------------------------------------
+" TODO: Highlight current line slightly
+" TODO: Make comment color slightly brighter
+" TODO: Make line number color slightly brighter and tint it
+" TODO: Change split/status bar colors to blend in better
+" TODO: Figure out how to color the 'no write since last change' kind of
+" messages
+" ------------------------------------------------------------------------------
+
+" ------------------------------------------------------------------------------
 " Opening statements, let/var/fn/function and
 " things like for/if/while etc = red
 "
@@ -36,7 +45,7 @@ let g:colors_name="skalver"
 " background highlight: #2d393d
 " foreground: #e5e0d8
 " midtones: #b5cdce 
-" comments: #5d7a7a
+" comments: #668484
 " comments brighter: #668484
 "
 " green normal: #8fd39c
@@ -45,36 +54,36 @@ let g:colors_name="skalver"
 " red normal: #dd4c42
 " red dim: #a0524d 
 "
-" orange normal: #e5be5b
+" orange normal: #e8b978
 " orange dim: #b7a26c 
 "
 " testing: #f943f6
 
 " COMMON:
-hi Normal guifg=#e5e0d8 guibg=#252d33
+hi Normal guifg=#e5e0d8 guibg=#252d33 
 hi PreProc guifg=#e5e0d8 guibg=NONE
-hi Comment guifg=#5d7a7a guibg=NONE
+hi Comment guifg=#668484 guibg=NONE
 hi Function guifg=#8fd39c guibg=NONE
 hi Statement guifg=#dd4c42 guibg=NONE
 hi Repeat guifg=#dd4c42 guibg=NONE
 hi Constant guifg=#8fd39c guibg=NONE
-hi Number guifg=#e5be5b guibg=NONE
+hi Number guifg=#e8b978 guibg=NONE
 hi Identifier guifg=#dd4c42 guibg=NONE
 hi String guifg=#8fd39c guibg=NONE 
-hi Special guifg=#e5be5b guibg=NONE
+hi Special guifg=#e8b978 guibg=NONE
 hi Conditional guifg=#dd4c42 guibg=NONE
 hi Operator guifg=#b5cdce guibg=NONE
 hi Title guifg=#e5e0d8 guibg=NONE
 hi Delimiter guifg=#e5e0d8 guibg=NONE
 
 " SPELLING:
-hi SpellBad guifg=#e5be5b guibg=#5d7a7a
-hi SpellBad guifg=#e5be5b guibg=#5d7a7a
-hi SpellBad guifg=#e5be5b guibg=#5d7a7a
-hi SpellBad guifg=#e5be5b guibg=#5d7a7a
+hi SpellBad guifg=#e8b978 guibg=#668484
+hi SpellBad guifg=#e8b978 guibg=#668484
+hi SpellBad guifg=#e8b978 guibg=#668484
+hi SpellBad guifg=#e8b978 guibg=#668484
 
 " UI:
-hi LineNr guifg=#5d7a7a guibg=NONE
+hi LineNr guifg=#668484 guibg=NONE
 hi Cursor guifg=#000000 guibg=NONE gui=NONE
 hi CursorLineNr guifg=#668484 guibg=NONE
 hi EndOfBuffer guifg=#668484 guibg=NONE
@@ -83,8 +92,8 @@ hi MatchParen guifg=#e5e0d8 guibg=NONE gui=reverse
 hi MoreMsg guifg=#d2c7ba guibg=NONE
 hi Folded guifg=#d2c7ba guibg=#2d393d 
 hi FoldColumn guifg=#d2c7ba guibg=#2d393d 
-hi Visual guifg=#d2c7ba guibg=#5d7a7a
-hi Search guifg=#d2c7ba guibg=#5d7a7a
+hi Visual guifg=#d2c7ba guibg=#668484
+hi Search guifg=#d2c7ba guibg=#668484
 hi Question guifg=#e8a74c guibg=NONE
 hi Error guifg=#d2c7ba guibg=#cd5148 gui=reverse
 hi ErrorMsg guifg=#d2c7ba guibg=NONE gui=NONE
@@ -103,9 +112,9 @@ hi vimGroup guifg=#e5e0d8 guibg=NONE
 hi vimHiGroup guifg=#e5e0d8 guibg=NONE
 hi vimHiGuiFgBg guifg=#b5cdce guibg=NONE
 hi vimHiGui guifg=#b5cdce guibg=NONE
-hi vimFTOption guifg=#e5be5b guibg=NONE
-hi vimSynType guifg=#e5be5b guibg=NONE
-hi vimLineComment guifg=#5d7a7a guibg=NONE
+hi vimFTOption guifg=#e8b978 guibg=NONE
+hi vimSynType guifg=#e8b978 guibg=NONE
+hi vimLineComment guifg=#668484 guibg=NONE
 hi vimCommentTitle guifg=#86bc90 guibg=NONE gui=bold
 hi vimTodo guifg=#86bc90 guibg=NONE
 hi vimSetSep guifg=#d2c7ba guibg=NONE
@@ -120,7 +129,7 @@ hi helpExample guifg=#b5cdce guibg=NONE
 hi htmlTag guifg=#b5cdce guibg=NONE
 hi htmlEndTag guifg=#b5cdce guibg=NONE
 hi htmlTagName guifg=#dd4c42 guibg=NONE
-hi htmlArg guifg=#e5be5b guibg=NONE
+hi htmlArg guifg=#e8b978 guibg=NONE
 hi htmlTitle guifg=#e5e0d8 guibg=NONE
 hi htmlLink guifg=#e5e0d8 guibg=NONE
 
@@ -145,12 +154,13 @@ hi cssAtKeyword guifg=#dd4c42 guibg=NONE
 hi cssPseudoClassId guifg=#b5cdce guibg=NONE
 
 " JAVASCRIPT:
+hi javaScript guifg=#e5e0d8 guibg=NONE
 hi javaScriptFunction guifg=#dd4c42 guibg=NONE
 hi javaScriptParens guifg=#b5cdce guibg=NONE
 hi javaScriptBraces guifg=#b5cdce guibg=NONE
-hi javaScriptNumber guifg=#e5be5b guibg=NONE
-hi javaScriptBoolean guifg=#e5be5b guibg=NONE
-hi javaScriptNull guifg=#e5be5b guibg=NONE
+hi javaScriptNumber guifg=#e8b978 guibg=NONE
+hi javaScriptBoolean guifg=#e8b978 guibg=NONE
+hi javaScriptNull guifg=#e8b978 guibg=NONE
 
 " JSON:
 hi jsonBraces guifg=#b5cdce guibg=NONE
@@ -159,7 +169,9 @@ hi jsonKeyword guifg=#dd4c42 guibg=NONE
 " PYTHON:
 hi pythonInclude guifg=#dd4c42 guibg=NONE
 hi pythonBuiltin guifg=#e5e0d8 guibg=NONE
-hi pythonExceptions guifg=#e5be5b guibg=NONE
+hi pythonExceptions guifg=#e8b978 guibg=NONE
+hi pythonTodo guifg=#86bc90 guibg=NONE
+hi pythonFunction guifg=#e5e0d8 guibg=NONE
 
 " SHELL SCRIPT:
 hi shCmdSubRegion guifg=#b5cdce guibg=NONE
@@ -168,11 +180,12 @@ hi shDerefVar guifg=#e5e0d8 guibg=NONE
 
 " RUST:
 hi rustStorage guifg=#e5e0d8 guibg=NONE
-hi rustTrait guifg=#e5be5b guibg=NONE
-hi rustSigil guifg=#e5be5b guibg=NONE
-hi rustType guifg=#e5be5b guibg=NONE
+hi rustTrait guifg=#e8b978 guibg=NONE
+hi rustSigil guifg=#e8b978 guibg=NONE
+hi rustType guifg=#e8b978 guibg=NONE
 hi rustFoldBraces guifg=#d2c7ba guibg=NONE
 hi rustFuncName guifg=#e5e0d8 guibg=NONE gui=italic
+hi rustFuncCall guifg=#e5e0d8 guibg=NONE gui=italic
 
 
 " MARKDOWN:

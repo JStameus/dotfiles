@@ -92,7 +92,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 call plug#begin('~/.vim/plugged')
 
 " Enable transparent background
-Plug 'kjwon15/vim-transparent'
+" Plug 'kjwon15/vim-transparent'
 
 " Conquer of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -102,6 +102,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Installed: coc-css
 " Installed: coc-emmet
 " Installed: coc-vetur
+" Installed: coc-tsserver
 
 " LANGUAGE-SPECIFIC 
 " Rust: Enables syntax-highlighting, formatting etc
@@ -123,7 +124,24 @@ call plug#end()
 " F3: Display information about syntax highlighting
 map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
 
+" F2: Replace all instances of selected word in file.
+map <F2> yiw:%s/<C-r>"//g<Left><Left>
+
+" LEADER COMMANDS:
+" Normal hh: Clear search highlighting.
 nnoremap <Leader>hh :nohls<CR>
+
+" Normal o: Add new line above and below current line, and enter insert mode.
+nnoremap <Leader>o o<Esc>O
+
+" Normal  c: Delete("close") buffer.
+nnoremap <Leader>c :bd<CR>
+
+" Visual n: Start typing a normal mode command on selected lines.
+vnoremap <Leader>n :normal<Space>
+
+" Visual m: Prepare to perform a macro on selected lines.
+vnoremap <Leader>m :normal<Space>@
 "+---------------------------------
 
 "+---------------------------------+
@@ -147,7 +165,7 @@ nnoremap <Leader>het wbya<ewpbi/<Esc>ewbba
 
 " JAVASCRIPT 
 " Console Log
-nnoremap <Leader>jsl :-1read $HOME/.vim/snippets/jsconsolelog.js<CR>f(a
+nnoremap <Leader>jsl O<Esc>:-1read $HOME/.vim/snippets/jsconsolelog.js<CR>f(a
 
 "+---------------------------------+
 

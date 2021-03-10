@@ -46,7 +46,7 @@ let g:colors_name="pavilion"
 " murky: #2d393d
 
 " COMMON:
-hi Normal guifg=#e5d1aa guibg=#252d33 
+hi Normal guifg=#e5d1aa guibg=#292a2d
 hi PreProc guifg=#e5d1aa guibg=NONE
 hi Comment guifg=#6f7b8c guibg=NONE
 hi Function guifg=#b2c4c1 guibg=NONE
@@ -86,6 +86,7 @@ hi VertSplit guifg=#4f5b66 guibg=#ede5dd
 hi MatchParen guifg=#b5cdce guibg=#6f7b8c
 hi MoreMsg guifg=#d2c7ba guibg=NONE
 hi NonText guifg=#8d98ab guibg=NONE
+hi SpecialKey guifg=#bd5747 guibg=NONE
 hi Folded guifg=#d2c7ba guibg=#2d393d 
 hi FoldColumn guifg=#d2c7ba guibg=#2d393d 
 hi Visual guifg=#d2c7ba guibg=#6f7b8c
@@ -168,6 +169,9 @@ hi cssTransitionProp guifg=#ede5dd guibg=NONE
 hi cssColorProp guifg=#ede5dd guibg=NONE
 hi cssAtKeyword guifg=#bd5747 guibg=NONE
 hi cssPseudoClassId guifg=#ede5dd guibg=NONE
+hi cssFlexibleBoxAttr guifg=#e09f5a guibg=NONE
+hi cssBorderAttr guifg=#e09f5a guibg=NONE
+hi cssMultiColumnAttr guifg=#e09f5a guibg=NONE
 
 " JAVASCRIPT:
 hi javaScript guifg=#e5d1aa guibg=NONE
