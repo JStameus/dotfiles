@@ -69,6 +69,8 @@ filetype plugin on
 
 " Re-binding the Leader key
 let mapleader=" "
+
+set timeoutlen=600
 "+---------------------------------+
 
 "+---------------------------------+
@@ -121,11 +123,18 @@ call plug#end()
 "+---------------------------------+
 " CUSTOM COMMANDS & KEYBINDS
 "+---------------------------------+
-" F3: Display information about syntax highlighting
-map <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
+" jj: Leave insert mode.
+imap jj <Esc>
+
+" F1: Open a new window and go to definition of currently selected word.
+nnoremap <F1> yiw:sp<CR>:tag <C-r>"<CR>
 
 " F2: Replace all instances of selected word in file.
-map <F2> yiw:%s/<C-r>"//g<Left><Left>
+nnoremap <F2> yiw:%s/<C-r>"//g<Left><Left>
+
+" F3: Display information about syntax highlighting
+nnoremap <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
+
 
 " LEADER COMMANDS:
 " Normal hh: Clear search highlighting.
