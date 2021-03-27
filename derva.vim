@@ -17,11 +17,7 @@ let g:colors_name="pavilion"
 " ------------------------------------------------------------------------------
 " TODO: Figure out how to color the 'no write since last change' kind of
 " messages
-" TODO: Fix coloring on wildmenu
-" TODO: Fix coloring on plug update brackets
-" TODO: Fix coloring on Vim start screen tags
 " TODO: Make css attributes foreground and values orange
-" TODO: Add proper coloring to javascript todo
 " TODO: Change background color of popup menu
 " TODO: Change "indigo" color to something else/make it stand out more
 " ------------------------------------------------------------------------------
@@ -46,7 +42,7 @@ let g:colors_name="pavilion"
 " murky: #2d393d
 
 " COMMON:
-hi Normal guifg=#e5d1aa guibg=#252d33 
+hi Normal guifg=#e5d1aa guibg=#292a2d
 hi PreProc guifg=#e5d1aa guibg=NONE
 hi Comment guifg=#6f7b8c guibg=NONE
 hi Function guifg=#b2c4c1 guibg=NONE
@@ -86,10 +82,11 @@ hi VertSplit guifg=#4f5b66 guibg=#ede5dd
 hi MatchParen guifg=#b5cdce guibg=#6f7b8c
 hi MoreMsg guifg=#d2c7ba guibg=NONE
 hi NonText guifg=#8d98ab guibg=NONE
+hi SpecialKey guifg=#bd5747 guibg=NONE
 hi Folded guifg=#d2c7ba guibg=#2d393d 
 hi FoldColumn guifg=#d2c7ba guibg=#2d393d 
-hi Visual guifg=#d2c7ba guibg=#6f7b8c
-hi Search guifg=#d2c7ba guibg=#6f7b8c
+hi Visual guifg=#d2c7ba guibg=#4d5457
+hi Search guifg=#d2c7ba guibg=#4d5457
 hi Question guifg=#e8a74c guibg=NONE
 hi Error guifg=#d2c7ba guibg=#cd5148 gui=reverse
 hi ErrorMsg guifg=#d2c7ba guibg=NONE gui=NONE
@@ -148,26 +145,32 @@ hi htmlLink guifg=#e5d1aa guibg=NONE
 " CSS:
 hi cssTagName guifg=#b2c4c1 guibg=NONE
 hi cssIdentifier guifg=#ccc578 guibg=NONE
-hi cssClassName guifg=#ccc578 guibg=NONE
-hi cssClassNameDot guifg=#ccc578 guibg=NONE
+hi cssClassName guifg=#bd5747 guibg=NONE
+hi cssClassNameDot guifg=#bd5747 guibg=NONE
 hi cssBraces guifg=#ede5dd guibg=NONE
-hi cssAttrComma guifg=#ede5dd guibg=NONE
+hi cssNoise guifg=#ede5dd guibg=NONE
+hi cssAttrComma guifg=#e5d1aa guibg=NONE
 hi cssCustomProp guifg=#e5d1aa guibg=NONE
-hi cssBoxProp guifg=#ede5dd guibg=NONE
-hi cssFlexibleBoxProp guifg=#ede5dd guibg=NONE
-hi cssFontProp guifg=#ede5dd guibg=NONE
-hi cssBackgroundProp guifg=#ede5dd guibg=NONE
-hi cssPositioningProp guifg=#ede5dd guibg=NONE
-hi cssBorderProp guifg=#ede5dd guibg=NONE
-hi cssMediaProp guifg=#ede5dd guibg=NONE
-hi cssTextProp guifg=#ede5dd guibg=NONE
-hi cssUIProp guifg=#ede5dd guibg=NONE
-hi cssListProp guifg=#ede5dd guibg=NONE
+hi cssBoxProp guifg=#e5d1aa guibg=NONE
+hi cssFlexibleBoxProp guifg=#e5d1aa guibg=NONE
+hi cssFontProp guifg=#e5d1aa guibg=NONE
+hi cssBackgroundProp guifg=#e5d1aa guibg=NONE
+hi cssPositioningProp guifg=#e5d1aa guibg=NONE
+hi cssBorderProp guifg=#e5d1aa guibg=NONE
+hi cssMediaProp guifg=#e5d1aa guibg=NONE
+hi cssTextProp guifg=#e5d1aa guibg=NONE
+hi cssUIProp guifg=#e5d1aa guibg=NONE
+hi cssListProp guifg=#e5d1aa guibg=NONE
 hi cssString guifg=#ccc578 guibg=NONE
-hi cssTransitionProp guifg=#ede5dd guibg=NONE
-hi cssColorProp guifg=#ede5dd guibg=NONE
+hi cssTransitionProp guifg=#e5d1aa guibg=NONE
+hi cssColorProp guifg=#e5d1aa guibg=NONE
 hi cssAtKeyword guifg=#bd5747 guibg=NONE
-hi cssPseudoClassId guifg=#ede5dd guibg=NONE
+hi cssPseudoClassId guifg=#e5d1aa guibg=NONE
+hi cssFlexibleBoxAttr guifg=#e09f5a guibg=NONE
+hi cssBorderAttr guifg=#e09f5a guibg=NONE
+hi cssMultiColumnAttr guifg=#e09f5a guibg=NONE
+hi cssMultiColumnAttr guifg=#e09f5a guibg=NONE
+hi cssGridProp guifg=#e5d1aa guibg=NONE
 
 " JAVASCRIPT:
 hi javaScript guifg=#e5d1aa guibg=NONE
@@ -196,10 +199,14 @@ hi jsNewClassName guifg=#e09f5a guibg=NONE
 hi jsNewClassName guifg=#e09f5a guibg=NONE
 hi jsBuiltinObjects guifg=#e09f5a guibg=NONE
 hi jsCommentTodo guifg=#8d98ab guibg=NONE
+hi jsImport guifg=#bd5747 guibg=NONE
+hi jsFrom guifg=#bd5747 guibg=NONE
+hi jsModuleName guifg=#e09f5a guibg=NONE
 
 " JSON:
 hi jsonBraces guifg=#ede5dd guibg=NONE
 hi jsonKeyword guifg=#bd5747 guibg=NONE
+hi jsonNull guifg=#e09f5a guibg=NONE
 
 " PYTHON:
 hi pythonInclude guifg=#bd5747 guibg=NONE
