@@ -8,9 +8,8 @@
 
 " |-- VIM --|
 
-"+---------------------------------+
 " BASIC FUNCTIONALITY  
-"+---------------------------------+
+"-----------------------------------
 set nocompatible
 
 " Line numbers 
@@ -49,7 +48,7 @@ set smartcase
 set infercase
 
 " Setting search path 
-set path+=**
+set path-=**
 set wildmenu
 
 " Enabling switching between buffers without saving
@@ -72,11 +71,10 @@ let mapleader=" "
 
 " Setting the delay for commands
 set timeoutlen=600
-"+---------------------------------+
+"-----------------------------------
 
-"+---------------------------------+
 " CUSTOM COMMANDS & KEYBINDS
-"+---------------------------------+
+"-----------------------------------
 " jj: Leave insert mode.
 imap jj <Esc>
 
@@ -97,19 +95,27 @@ nnoremap <Leader>hh :nohls<CR>
 " Normal o: Add new line above and below current line, and enter insert mode.
 nnoremap <Leader>o o<Esc>O
 
-" Normal  c: Delete("close") buffer.
+" Normal c: Delete("close") buffer.
 nnoremap <Leader>c :bd<CR>
+
+" Normal f: Quickly open FZF
+nnoremap <Leader>f :FZF<CR>
+
+" Normal i: Insert a single character
+nnoremap <Leader>i i_<Esc>r
+
+" Normal a: Append a single character
+nnoremap <Leader>a a_<Esc>r
 
 " Visual n: Start typing a normal mode command on selected lines.
 vnoremap <Leader>n :normal<Space>
 
 " Visual m: Prepare to perform a macro on selected lines.
 vnoremap <Leader>m :normal<Space>@
-"+---------------------------------
+"----------------------------------
 
-"+---------------------------------+
 " SNIPPETS 
-"+---------------------------------+
+"-----------------------------------
 " GENERIC:
 " Automatically create matching braces etc.
 inoremap ( ()<Left>
@@ -133,11 +139,10 @@ nnoremap <Leader>het wbya<ewpbi/<Esc>ewbba
 " Console Log
 nnoremap <Leader>jsl O<Esc>:-1read $HOME/.vim/snippets/jsconsolelog.js<CR>f(a
 
-"+---------------------------------+
+"-----------------------------------
 
-"+---------------------------------+
 " SPELL CHECKING & AUTOCOMPLETION 
-"+---------------------------------+
+"-----------------------------------
 " Setting English as language to spell check
 set spell spelllang=en_us
 
@@ -145,15 +150,14 @@ set spell spelllang=en_us
 set nospell
 
 " Setting up spell checking and popup menu
-set complete+=kspell	  
+set complete-=kspell	  
 set completeopt=menuone,noinsert,preview
 " Suppresses unnecessary 'hit Enter' prompts
-set shortmess+=c
-"+---------------------------------+
+set shortmess-=c
+"-----------------------------------
 
-"+---------------------------------+
 " COLOR SETUP 
-"+---------------------------------+
+"-----------------------------------
 " Background Color Light/Dark
 set background=dark
 colorscheme derva
@@ -163,11 +167,10 @@ set t_Co=256
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-"+---------------------------------+
+"-----------------------------------
 
-"+---------------------------------+
 " PLUGINS 
-"+---------------------------------+
+"-----------------------------------
 " Don't forget to run :PlugInstall after tweaking the setup! 
 call plug#begin('~/.vim/plugged')
 
@@ -193,5 +196,5 @@ Plug 'vim-python/python-syntax'
 Plug 'vimwiki/vimwiki'
 
 call plug#end()
-"+---------------------------------+
+"-----------------------------------
 

@@ -14,12 +14,7 @@ endif
 
 let g:colors_name="pavilion"
 
-" ------------------------------------------------------------------------------
-" TODO: Figure out how to color the 'no write since last change' kind of
-" messages
-" TODO: Make css attributes foreground and values orange
 " TODO: Change background color of popup menu
-" TODO: Change "indigo" color to something else/make it stand out more
 " ------------------------------------------------------------------------------
  
 " COLOR CODES:
@@ -202,6 +197,7 @@ hi jsCommentTodo guifg=#8d98ab guibg=NONE
 hi jsImport guifg=#bd5747 guibg=NONE
 hi jsFrom guifg=#bd5747 guibg=NONE
 hi jsModuleName guifg=#e09f5a guibg=NONE
+hi jsArrow guifg=#ede5dd guibg=NONE
 
 " JSON:
 hi jsonBraces guifg=#ede5dd guibg=NONE
