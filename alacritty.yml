@@ -8,6 +8,12 @@
 
 # |-- ALACRITTY --|
 
+# WINDOW SIZE
+#--------------------------------
+dimensions:
+  columns: 75
+  lines: 35
+
 # FONT 
 #--------------------------------
 font:
@@ -27,7 +33,7 @@ font:
     family: JetBrains Mono
     style: Bold Italic
 
-  size: 12
+  size: 11
 #--------------------------------
 
 # COLOR & OPACITY
@@ -42,24 +48,24 @@ colors:
     foreground: '#e5d1aa'
 
   normal:
-    black:   '#404a48'
+    black:   '#242B30'
     red:     '#bd5747'
     green:   '#ccc578'
-    yellow:  '#dfb787'
+    yellow:  '#E09F5A'
     blue:    '#82a6b1'
-    magenta: '#6e6a7b'
-    cyan:    '#709680'
-    white:   '#d3e3e8'
+    magenta: '#C07E8C'
+    cyan:    '#82B1B1'
+    white:   '#EDE5DD'
 
   bright:
-    black:   '#76877d'
-    red:     '#a53f2f'
-    green:   '#a2c89a'
-    yellow:  '#c28f52'
-    blue:    '#728aab'
-    magenta: '#b179a0'
-    cyan:    '#6fa68d'
-    white:   '#726953'
+    black:   '#25272B'
+    red:     '#D75743'
+    green:   '#DCD371'
+    yellow:  '#EC9857'
+    blue:    '#B2C4C1'
+    magenta: '#D78392'
+    cyan:    '#85D0D0'
+    white:   '#A4A9B1'
 #--------------------------------
 
 # CURSOR
