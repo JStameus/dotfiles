@@ -63,14 +63,20 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 
-" Enabling filetype detection
-filetype plugin on 
+" Setting up automatic mkview
+autocmd BufWinLeave * if expand("%") != "" | mkview | endif
+autocmd BufWinEnter * if expand("%") != "" | loadview | endif
 
 " Re-binding the Leader key
 let mapleader=" "
 
 " Setting the delay for commands
 set timeoutlen=600
+"
+" Enabling filetype detection
+filetype plugin on 
+
+" FILETYPE OVERRIDES:
 "-----------------------------------
 
 " CUSTOM COMMANDS & KEYBINDS
@@ -107,6 +113,9 @@ nnoremap <Leader>i i_<Esc>r
 " Normal a: Append a single character
 nnoremap <Leader>a a_<Esc>r
 
+" Normal z: Create fold inside curly brackets
+nnoremap <Leader>z Vi{zf
+
 " Visual n: Start typing a normal mode command on selected lines.
 vnoremap <Leader>n :normal<Space>
 
@@ -135,10 +144,6 @@ nnoremap <Leader>html :-1read $HOME/.vim/snippets/boilerplate.html<CR>4jf>a
 " Create a matching end tag
 nnoremap <Leader>het wbya<ewpbi/<Esc>ewbba
 
-" JAVASCRIPT:
-" Console Log
-nnoremap <Leader>jsl O<Esc>:-1read $HOME/.vim/snippets/jsconsolelog.js<CR>f(a
-
 "-----------------------------------
 
 " SPELL CHECKING & AUTOCOMPLETION 
@@ -152,13 +157,18 @@ set nospell
 " Setting up spell checking and popup menu
 set complete-=kspell	  
 set completeopt=menuone,noinsert,preview
+
+" <CR>: Insert the first completion item and format it if possible.
+" NOTE: Requires Coc to function!
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 " Suppresses unnecessary 'hit Enter' prompts
 set shortmess-=c
 "-----------------------------------
 
 " COLOR SETUP 
 "-----------------------------------
-" Background Color Light/Dark
 set background=dark
 colorscheme derva
 
@@ -191,6 +201,8 @@ Plug 'rust-lang/rust.vim'
 Plug 'yuezk/vim-js'
 " Python: Enables better syntax highlighting
 Plug 'vim-python/python-syntax'
+" Handlebars: Syntax highlighting
+Plug '/mustache/vim-mustache-handlebars'
 
 " Vim Wiki
 Plug 'vimwiki/vimwiki'

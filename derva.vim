@@ -12,14 +12,14 @@ highlight clear
 	syntax reset
 endif
 
-let g:colors_name="pavilion"
+let g:colors_name="derva"
 
 " TODO: Change background color of popup menu
 " ------------------------------------------------------------------------------
  
 " COLOR CODES:
 " background: #292a2d
-" background highlight: #2d393d
+" background highlight: #303538 
 " background faint: #242b30
 
 " foreground: #e5d1aa
@@ -34,7 +34,7 @@ let g:colors_name="pavilion"
 " red hightlight: #ce5a48
 " orange: #e09f5a
 " green: #ccc578
-" murky: #2d393d
+" murky: #8caaa7
 
 " COMMON:
 hi Normal guifg=#e5d1aa guibg=#292a2d
@@ -78,8 +78,8 @@ hi MatchParen guifg=#b5cdce guibg=#6f7b8c
 hi MoreMsg guifg=#d2c7ba guibg=NONE
 hi NonText guifg=#8d98ab guibg=NONE
 hi SpecialKey guifg=#bd5747 guibg=NONE
-hi Folded guifg=#d2c7ba guibg=#2d393d 
-hi FoldColumn guifg=#d2c7ba guibg=#2d393d 
+hi Folded guifg=#8caaa7 guibg=NONE 
+hi FoldColumn guifg=#8d98ab guibg=NONE 
 hi Visual guifg=#d2c7ba guibg=#4d5457
 hi Search guifg=#d2c7ba guibg=#4d5457
 hi Question guifg=#e8a74c guibg=NONE
@@ -184,6 +184,7 @@ hi jsIfBraces guifg=#ede5dd guibg=NONE
 hi jsObjectBraces guifg=#ede5dd guibg=NONE
 hi jsLoopBraces guifg=#ede5dd guibg=NONE
 hi jsClassBraces guifg=#ede5dd guibg=NONE
+hi jsSwitchBraces guifg=#ede5dd guibg=NONE
 hi jsBuiltinValues guifg=#e09f5a guibg=NONE
 hi jsVariableType guifg=#bd5747 guibg=NONE
 hi jsFunctionCall guifg=#b2c4c1 guibg=NONE
