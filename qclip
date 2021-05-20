@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Copies the content of a file to the system clipboard.
+
+if [[ -f ${1} ]]
+then
+    xclip -sel c < ${1}
+    if [[ ${?} -ne 0 ]]
+    then
+        echo "ERROR: Could not copy to clipboard."
+        exit 1
+    else
+        echo "Copied contents of $(basename ${1}) to clipboard."
+        exit 0
+    fi
+else 
+    echo "ERROR: File not found."
+    exit 1
+fi
