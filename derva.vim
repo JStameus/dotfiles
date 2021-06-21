@@ -1,5 +1,5 @@
 " AUTHOR: Joseph Stameus
-" REPO: https://github.com/JStameus/derva-vim
+" REPO: https://github.com/oxifinch/derva-vim
 "
 " SUPPORT: 
 " 256 color terminals, GVim, Termguicolors
@@ -96,6 +96,12 @@ hi TabLineSel guifg=#ede5dd guibg=#4f5b66
 hi TabLineFill guifg=#2f3335 guibg=NONE gui=NONE 
 hi StatusLine guifg=#4f5b66 guibg=#ede5dd gui=NONE
 hi StatusLineNC guifg=#3b4449 guibg=#8d98ab
+
+" Integrated terminal
+let g:terminal_ansi_colors = [
+        \ '#292a2d', '#e33400', '#5ccc96', '#b3a1e6', '#00a3cc', '#ce6f8f', '#7a5ccc', '#686f9a',
+        \ '#686f9a', '#e33400', '#5ccc96', '#b3a1e6', '#00a3cc', '#ce6f8f', '#7a5ccc', '#ecf0c1']
+
 " Plugin Specific
 " Vim Plug
 hi plugBracket guifg=#e5d1aa guibg=NONE
@@ -180,6 +186,8 @@ hi jsParens guifg=#ede5dd guibg=NONE
 hi jsBrackets guifg=#ede5dd guibg=NONE
 hi jsFunctionParens guifg=#ede5dd guibg=NONE
 hi jsFunctionBraces guifg=#ede5dd guibg=NONE
+hi jsDestructuringBraces guifg=#ede5dd guibg=NONE
+hi jsExceptionBraces guifg=#ede5dd guibg=NONE
 hi jsIfBraces guifg=#ede5dd guibg=NONE
 hi jsObjectBraces guifg=#ede5dd guibg=NONE
 hi jsLoopBraces guifg=#ede5dd guibg=NONE

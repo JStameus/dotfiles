@@ -1,10 +1,10 @@
-
-" |      _   _____  _                                     
-" |     | | / ____|| |                                      |
-" |     | || (___  | |_  __ _  _ __ ___    ___  _   _  ___  |
-" | _   | | \___ \ | __|/ _` || '_ ` _ \  / _ \| | | |/ __| |	       
-" || |__| | ____) || |_| (_| || | | | | ||  __/| |_| |\__ \ |
-" | \____/ |_____/  \__|\__,_||_| |_| |_| \___| \__,_||___/ | @github
+" |                    d8,   ,d8888b  d8,                  d8b       |
+" |                   `8P    88P'    `8P                   ?88       |
+" |                       d888888P                          88b      |
+" |  d8888b ?88,  88P  88b  ?88'      88b  88bd88b  d8888b  888888b  |
+" | d8P' ?88 `?8bd8P'  88P  88P       88P  88P' ?8bd8P' `P  88P `?8b |
+" | 88b  d88 d8P?8b,  d88  d88       d88  d88   88P88b     d88   88P |
+" | `?8888P'd8P' `?8bd88' d88'      d88' d88'   88b`?888P'd88'   88b | @github
 
 " |-- VIM --|
 
@@ -64,8 +64,8 @@ set tabstop=4
 set expandtab
 
 " Setting up automatic mkview
-autocmd BufWinLeave * if expand("%") != "" | mkview | endif
-autocmd BufWinEnter * if expand("%") != "" | loadview | endif
+" autocmd BufWinLeave * if expand("%") != "" | mkview | endif
+" autocmd BufWinEnter * if expand("%") != "" | loadview | endif
 
 " Re-binding the Leader key
 let mapleader=" "
@@ -75,8 +75,11 @@ set timeoutlen=600
 "
 " Enabling filetype detection
 filetype plugin on 
+"-----------------------------------
 
-" FILETYPE OVERRIDES:
+" FILETYPE OVERRIDES
+"-----------------------------------
+
 "-----------------------------------
 
 " CUSTOM COMMANDS & KEYBINDS
@@ -186,13 +189,13 @@ call plug#begin('~/.vim/plugged')
 
 " Conquer of Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Installed: coc-rust-analyzer
-" Installed: coc-pyright 
-" Installed: coc-html
-" Installed: coc-css
-" Installed: coc-emmet
-" Installed: coc-vetur
-" Installed: coc-tsserver
+" [x] coc-rust-analyzer  
+" [ ] coc-pyright        
+" [x] coc-html           
+" [x] coc-css            
+" [x] coc-emmet          
+" [ ] coc-vetur          
+" [x] coc-tsserver       
 
 " LANGUAGE-SPECIFIC 
 " Rust: Enables syntax-highlighting, formatting etc
@@ -200,12 +203,15 @@ Plug 'rust-lang/rust.vim'
 " JavaScript: Enables better syntax highlighting
 Plug 'yuezk/vim-js'
 " Python: Enables better syntax highlighting
-Plug 'vim-python/python-syntax'
+" Plug 'vim-python/python-syntax'
 " Handlebars: Syntax highlighting
-Plug '/mustache/vim-mustache-handlebars'
+" Plug '/mustache/vim-mustache-handlebars'
 
 " Vim Wiki
 Plug 'vimwiki/vimwiki'
+
+" Goyo
+" Plug 'junegunn/goyo.vim'
 
 call plug#end()
 "-----------------------------------
