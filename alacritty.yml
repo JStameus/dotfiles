@@ -7,15 +7,29 @@
 # | 88b  d88 d8P?8b,  d88  d88       d88  d88   88P88b     d88   88P |
 # | `?8888P'd8P' `?8bd88' d88'      d88' d88'   88b`?888P'd88'   88b | @github
 
-# |-- ALACRITTY --|
+# |------------------------[  ALACRITTY  ]---------------------------|
 
-# GENERAL
+#   = GENERAL =
 #--------------------------------
-env:
+#   == Environment Settings ==
+env:                         # Set the terminal to 256color
   TERM: xterm-256color
 
-# FONT 
+#   == Default Window Settings ==
+window:
+  padding:
+    x: 2
+    y: 2
+
+dimensions:
+  columns: 75
+  lines: 35
+
 #--------------------------------
+
+#   = COLOR & DISPLAY =
+#--------------------------------
+#   == Font Settings ==
 font:
   normal:
     family: JetBrains Mono
@@ -34,15 +48,11 @@ font:
     style: Bold Italic
 
   size: 12
-#--------------------------------
 
-# COLOR & OPACITY
-#--------------------------------
-
+#   == Color Settings ==
 background_opacity: 1
 
-# DERVA
-colors:
+colors:                      # Derva theme
   primary:
     background: '#292a2d'
     foreground: '#e5d1aa'
@@ -66,24 +76,4 @@ colors:
     magenta: '#D78392'
     cyan:    '#85D0D0'
     white:   '#A4A9B1'
-#--------------------------------
-
-# CURSOR
-#--------------------------------
-#cursor:
-#  style:
-#    shape: Beam
-#    blinking: Always
-#--------------------------------
-
-# WINDOW 
-#--------------------------------
-window:
-  padding:
-    x: 2
-    y: 2
-
-dimensions:
-  columns: 75
-  lines: 35
 #--------------------------------
