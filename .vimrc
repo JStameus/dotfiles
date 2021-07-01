@@ -144,7 +144,7 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "-----------------------------------
 "   == HTML ==
 " html        Standard HTML Boilerplate
-nnoremap <Leader>html :-1read $HOME/.vim/snippets/boilerplate.html<CR>4jf>a
+nnoremap <Leader>html :-1read $HOME/.vim/snippets/html/boilerplate<CR>4jf>a
 "-----------------------------------
 
 " = FILETYPE OVERRIDES =
