@@ -77,22 +77,30 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 "   == Normal Mode Commands ==
-" hh               Clear search highlighting
-" o                Create blank line above and below current, enter insert mode 
-" c                Delete buffer
-" f                Open FZF
-" i                Insert single character
-" a                Append single character
+" <leader>hh       Clear search highlighting
+" <leader>o        Create blank line above and below current, enter insert mode 
+" <leader>c        Delete buffer
+" <leader>f        Open FZF
+" <leader>i        Insert single character
+" <leader>a        Append single character
+" <leader>ev       Open .vimrc in a split
+" <leader>sv       Source .vimrc 
+" <leader>kk       Swap current line up
+" <leader>jj       Swap current line down
 nnoremap <Leader>hh :nohls<CR>
 nnoremap <Leader>o o<Esc>O
 nnoremap <Leader>c :bd<CR>
 nnoremap <Leader>f :FZF<CR>
 nnoremap <Leader>i i_<Esc>r
 nnoremap <Leader>a a_<Esc>r
+nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <Leader>sv :source $MYVIMRC<CR>
+nnoremap <Leader>kk ddkP
+nnoremap <Leader>jj ddp
 
 " == Visual Mode Commands ==
-" n                Start typing a normal mode command on selected lines
-" m                Use a macro on selected lines
+" <leader>n        Start typing a normal mode command on selected lines
+" <leader>m        Use a macro on selected lines
 vnoremap <Leader>n :normal<Space>
 vnoremap <Leader>m :normal<Space>@
 
@@ -104,6 +112,19 @@ nnoremap <F1> yiw:sp<CR>:tag <C-r>"<CR>
 nnoremap <F2> yiw:%s/<C-r>"//g<Left><Left>
 nnoremap <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
 "-----------------------------------
+
+" = SNIPPETS =
+"-----------------------------------
+"   == HTML ==
+" html             Standard HTML Boilerplate
+nnoremap <Leader>html :-1read $HOME/.vim/snippets/html/boilerplate<CR>4jf>a
+
+"   == Abbreviations ==
+"-----------------------------------
+" @@               Enter my developer email 
+" @git             Enter my GitHub URL
+iabbrev @@ oxifinch@protonmail.com
+iabbrev git@ https://github.com/oxifinch
 
 " = PLUGINS =
 "-----------------------------------
@@ -140,12 +161,6 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "-----------------------------------
 
-" = SNIPPETS =
-"-----------------------------------
-"   == HTML ==
-" html        Standard HTML Boilerplate
-nnoremap <Leader>html :-1read $HOME/.vim/snippets/html/boilerplate<CR>4jf>a
-"-----------------------------------
 
 " = FILETYPE OVERRIDES =
 "-----------------------------------
