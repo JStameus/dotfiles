@@ -15,6 +15,7 @@ set nocompatible
 
 "   == File & Buffer Settings ==
 set hidden                   " Enable switching buffers without saving
+set splitright               " Open splits on right side instead of left
 filetype on                  " Enable filetyp detection
 filetype plugin on           " Enabling filetype plugins
 
@@ -30,11 +31,11 @@ set wildmenu                 " Enable wildmenu
 set ruler                    " Show line and column number on status line
 set showtabline=1            " Show tabline when there are more than one tab
 set laststatus=2             " Always show status line
-set shortmess-=c             " Suppresses unnecessary 'hit Enter' prompts
+set shortmess-=c             " Suppress unnecessary 'hit Enter' prompts
 
 "   == Input Settings ==
-let mapleader=" "            " Re-binding the Leader key to Space
-set timeoutlen=600           " Setting the delay for commands
+let mapleader=" "            " Re-bind the Leader key to Space
+set timeoutlen=600           " Set the delay for commands to 600 ms
 
 "   == Search & Matching Settings ==
 set hlsearch                 " Highlight search matches
@@ -54,7 +55,7 @@ set completeopt+=preview     " Show more information about highlighted menu item
 "   == Text Display Settings ==
 syntax on                    " Enable syntax highlighting
 set linebreak                " Break lines instead of going off screen
-set showbreak=...            " Override line break sign to three dots
+set showbreak=..            " Override line break sign to three dots
 set textwidth=80             " Make text break at 80 characters width
 set showmatch                " Highlight matching braces/parentheses etc
 set expandtab                " Replace tab characters with spaces
@@ -87,22 +88,38 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 " <leader>sv       Source .vimrc 
 " <leader>kk       Swap current line up
 " <leader>jj       Swap current line down
-nnoremap <Leader>hh :nohls<CR>
-nnoremap <Leader>o o<Esc>O
-nnoremap <Leader>c :bd<CR>
-nnoremap <Leader>f :FZF<CR>
-nnoremap <Leader>i i_<Esc>r
-nnoremap <Leader>a a_<Esc>r
-nnoremap <Leader>ev :vsplit $MYVIMRC<CR>
-nnoremap <Leader>sv :source $MYVIMRC<CR>
-nnoremap <Leader>kk ddkP
-nnoremap <Leader>jj ddp
+" <leader>mv       mkview
+" <leader>lv       loadview
+nnoremap <leader>hh :nohls<CR>
+nnoremap <leader>o o<Esc>O
+nnoremap <leader>c :bd<CR>
+nnoremap <leader>f :FZF<CR>
+nnoremap <leader>i i_<Esc>r
+nnoremap <leader>a a_<Esc>r
+nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>kk ddkP
+nnoremap <leader>jj ddp
+nnoremap <leader>mv :mkview<cr>
+nnoremap <leader>lv :loadview<cr>
 
 " == Visual Mode Commands ==
 " <leader>n        Start typing a normal mode command on selected lines
 " <leader>m        Use a macro on selected lines
-vnoremap <Leader>n :normal<Space>
-vnoremap <Leader>m :normal<Space>@
+" <leader>"        Surround selection with double quotes
+" <leader>'        Surround selection with single quotes
+" <leader>`        Surround selection with back ticks
+" <leader>(        Surround selection with parentheses
+" <leader>[        Surround selection with square brackets
+" <leader>{        Surround selection with curly brackets
+vnoremap <leader>n :normal<Space>
+vnoremap <leader>m :normal<Space>@
+vnoremap <leader>" <esc>`<i"<esc>`>a<right>"<esc>
+vnoremap <leader>' <esc>`<i'<esc>`>a<right>'<esc>
+vnoremap <leader>` <esc>`<i`<esc>`>a<right>`<esc>
+vnoremap <leader>( <esc>`<i(<esc>`>a<right>)<esc>
+vnoremap <leader>[ <esc>`<i[<esc>`>a<right>]<esc>
+vnoremap <leader>{ <esc>`<i{<esc>`>a<right>}<esc>
 
 " == Function Key Commands ==
 " F1               Open a new window and go to definition of word under the cursor
@@ -113,18 +130,17 @@ nnoremap <F2> yiw:%s/<C-r>"//g<Left><Left>
 nnoremap <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
 "-----------------------------------
 
-" = SNIPPETS =
+" = SNIPPETS & ABBREVIATIONS =
 "-----------------------------------
 "   == HTML ==
-" html             Standard HTML Boilerplate
+" <leader>html     Standard HTML Boilerplate
 nnoremap <Leader>html :-1read $HOME/.vim/snippets/html/boilerplate<CR>4jf>a
 
-"   == Abbreviations ==
-"-----------------------------------
+"   == Signatures ==
 " @@               Enter my developer email 
 " @git             Enter my GitHub URL
-iabbrev @@ oxifinch@protonmail.com
-iabbrev git@ https://github.com/oxifinch
+iabbrev mail# oxifinch@protonmail.com
+iabbrev git# https://github.com/oxifinch
 
 " = PLUGINS =
 "-----------------------------------
@@ -161,10 +177,12 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "-----------------------------------
 
-
 " = FILETYPE OVERRIDES =
 "-----------------------------------
-
+" .ejs             HTML
+" .mjs             JavaScript
+autocmd BufRead,BufNewFile *.ejs set filetype=html
+autocmd BufRead,BufNewFile *.mjs set filetype=javascript
 "-----------------------------------
 
 " = SCRAPPED SETTINGS =
