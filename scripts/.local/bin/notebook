@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# This script allows the user to quickly jot down notes to a notebook file.
+
+# TODO: Make it possible to specify tags that can be added to the note.
+# TODO: Add an option for displaying notes by tags.
+
+noteFile=~/vimwiki/notebook.wiki
+message="${1}"
+
+# Check that notebook file exists, and create one if it doesn't.
+if [[ ! -e ${noteFile} ]]
+then
+    echo "Notebook file does not exist, creating it now..."
+    touch ${noteFile}
+    if [[ "${?}" -ne 0 ]]
+    then
+        echo "Error: Notebook file could not be created." >&2
+    fi
+fi
+
+# Check if message is more than one argument, otherwise, keep going.
+if [[ "${#}" -gt 1 ]]
+then
+    echo "Error: Note must be enclosed in quotation marks as a single argument." >&2
+    exit 1
+fi
+
+# Add the node in a new "snippet"
+echo >> ${noteFile}
+echo "----------" >> ${noteFile}
+echo "${message}" | fold -sw 80 >> ${noteFile}
+echo "----------" >> ${noteFile}
+
+if [[ "${?}" -ne 0 ]]
+then
+    echo "Error: One or more lines could not be appended to the notebook file." >&2
+    exit 1
+fi
+
+echo
+echo "Note added!"
+exit 0

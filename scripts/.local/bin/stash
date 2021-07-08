@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# This script takes a file or more files as an argument and moves them to the stash.
+# TODO: The list functionality should probably be implemented with options instead.
+
+# The files to send to stash
+files="${@}"
+
+# If no argument is provided, display stash contents
+if [[ "${#}" -lt 1 ]]
+then
+    echo "Displaying stash contents..."
+    echo
+    counter=0
+    for item in $(ls ~/stash/ | sort -V)
+    do
+        let counter+=1
+        echo "  ${counter}. ${item}"
+    done
+    exit 0
+fi
+
+echo "Moving ${#} item to stash..."
+mv ${files} ~/stash/
+
+if [[ "${?}" -ne 0 ]]
+then
+    echo "Error: One or more files could not be stashed." >&2
+    exit 1
+fi
+
+for file in ${files} 
+do 
+    echo "Moved ${file} to stash."
+done
+echo "Done."
+
+exit 0

@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# This script logs the user's mental state (0-10) and saves it in a log file.
+
+# Which file to write the output to.
+logFile=~/documents/logs/mentstat/log_mentalstate
+# logFile=~/scripts/testfiles/dev_log_mentalstate
+if [[ ! -e ${logFile} ]]
+then
+    echo "Error: Log File not found". >&2
+    exit 1
+fi
+
+# Get the current date and time and store them in strings.
+currentDate="$(date +%b | tr '[:upper:]' '[:lower:]') $(date +%d)"
+currentTime="$(date +%H):$(date +%M)"
+
+
+# The user-supplied value.
+score=${1}
+
+# Rounding out the score if it's not between 1 and 10.
+if [[ "${score}" -gt 10 ]]
+then
+    score=10
+    echo "Warning: Score out of range. Defaulting to 10." 
+elif [[ "${score}" -lt 1 ]]
+then
+    echo "Error: Invalid score. Please provide a number between 1 and 10." >&2
+    exit 1
+fi
+
+# Sending the output to the log file.
+echo "${currentDate}, ${currentTime}: ${score}" >> "${logFile}" 
+echo "MentStat score ${score} logged at: ${currentDate}, ${currentTime}."
+
+exit 0

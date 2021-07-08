@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# This script renames a file or given range of files and appends a number to their filename.
+
+display_usage() {
+    echo "${0}: NAMEPATTERN FILES .."
+    echo "Specify a name pattern, and one or more files to rename." >&2
+}
+
+if [[ "${#}" -lt 1 ]]
+then
+    echo "Error: No name pattern has been provided." >&2
+    exit 1
+fi
+
+namePattern=${1}
+shift
+
+filesToModify=${@} # whatever remains will be treated as the target
+if [[ "${#}" -lt 1 ]]
+then
+    echo "Error: No file has been provided." >&2
+    exit 1
+fi
+
+echo "Quick Rename: Renaming ${#} files..."
+fileCount=0
+for file in ${filesToModify}
+do
+    let fileCount+=1
+    newFile="${namePattern}${fileCount}"
+    mv ${file} ${newFile}
+    if [[ "${?}" -ne 0 ]]
+    then
+        echo "Error: File could not be renamed."
+        exit 1
+    fi
+    echo "${newFile}" 
+done
+
+echo "Done."
