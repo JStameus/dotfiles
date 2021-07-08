@@ -18,10 +18,23 @@ let g:colors_name="pavilion"
 " TODO: Make line number color slightly brighter and tint it
 " TODO: Figure out how to color the 'no write since last change' kind of
 " messages
-" TODO: Fix coloring on wildmenu
-" TODO: Fix coloring on plug update brackets
-" TODO: Fix coloring on Vim start screen tags
-" TODO: Fix coloring on line wrap indicator
+" ------------------------------------------------------------------------------
+
+" ------------------------------------------------------------------------------
+" Opening statements, let/var/fn/function and
+" things like for/if/while etc = red
+"
+" Values such as numbers, strings, attributes etc = orange
+"
+" functions/methods/class names = green
+"
+" Variables, constants, most common text = foreground
+" Operators, parentheses, brackets = midtones
+"
+" Basically, red should be a common accent, orange should be all literal values,
+" and green should be used sparingly. Every other generic thing should be
+" white. If visual clutter gets to be too much, red should be the first
+" thing to be replaced with white.
 " ------------------------------------------------------------------------------
  
 " COLOR CODES:
@@ -34,7 +47,7 @@ let g:colors_name="pavilion"
 
 " comments: #5b6b7a
 "
-" blue: #7bbbce
+" blue: #8aaecc 
 " gold: #d0bf97
 " copper: #bc8865 
 " seafoam green: #7ed6c1
@@ -46,7 +59,7 @@ let g:colors_name="pavilion"
 hi Normal guifg=#9bbec6 guibg=#252d33 
 hi PreProc guifg=#9bbec6 guibg=NONE
 hi Comment guifg=#5b6b7a guibg=NONE
-hi Function guifg=#7bbbce guibg=NONE
+hi Function guifg=#7ed6c1 guibg=NONE
 hi Statement guifg=#d0bf97 guibg=NONE
 hi Repeat guifg=#d0bf97 guibg=NONE
 hi Constant guifg=#7ed6c1 guibg=NONE
@@ -114,14 +127,13 @@ hi helpExample guifg=#c2d5d6 guibg=NONE
 " HTML:
 hi htmlTag guifg=#c2d5d6 guibg=NONE
 hi htmlEndTag guifg=#c2d5d6 guibg=NONE
-hi htmlTagName guifg=#7bbbce guibg=NONE
-hi htmlSpecialTagName guifg=#7bbbce guibg=NONE
+hi htmlTagName guifg=#8aaecc guibg=NONE
 hi htmlArg guifg=#d0bf97 guibg=NONE
 hi htmlTitle guifg=#c2d5d6 guibg=NONE
 hi htmlLink guifg=#9bbec6 guibg=NONE
 
 " CSS:
-hi cssTagName guifg=#7bbbce guibg=NONE
+hi cssTagName guifg=#8aaecc guibg=NONE
 hi cssIdentifier guifg=#bc8865 guibg=NONE
 hi cssClassName guifg=#d0bf97 guibg=NONE
 hi cssClassNameDot guifg=#d0bf97 guibg=NONE
@@ -151,23 +163,6 @@ hi javaScriptBraces guifg=#c2d5d6 guibg=NONE
 hi javaScriptNumber guifg=#c489bd guibg=NONE
 hi javaScriptBoolean guifg=#c489bd guibg=NONE
 hi javaScriptNull guifg=#c489bd guibg=NONE
-" Extra Plugin Highlights
-hi jsParens guifg=#c2d5d6 guibg=NONE
-hi jsBrackets guifg=#c2d5d6 guibg=NONE
-hi jsFunctionParens guifg=#c2d5d6 guibg=NONE
-hi jsFunctionBraces guifg=#c2d5d6 guibg=NONE
-hi jsIfBraces guifg=#c2d5d6 guibg=NONE
-hi jsLoopBraces guifg=#c2d5d6 guibg=NONE
-hi jsClassBraces guifg=#c2d5d6 guibg=NONE
-hi jsBuiltinValues guifg=#9bbec6 guibg=NONE
-hi jsVariableType guifg=#d0bf97 guibg=NONE
-hi jsFunctionCall guifg=#7bbbce guibg=NONE
-hi jsFunctionName guifg=#7bbbce guibg=NONE
-hi jsConstructor guifg=#7bbbce guibg=NONE
-hi jsClassName guifg=#c489bd guibg=NONE
-hi jsNewClassName guifg=#c489bd guibg=NONE
-hi jsNewClassName guifg=#c489bd guibg=NONE
-hi jsBuiltinObjects guifg=#c489bd guibg=NONE
 
 " JSON:
 hi jsonBraces guifg=#c2d5d6 guibg=NONE
@@ -178,7 +173,7 @@ hi pythonInclude guifg=#d0bf97 guibg=NONE
 hi pythonBuiltin guifg=#9bbec6 guibg=NONE
 hi pythonExceptions guifg=#c489bd guibg=NONE
 hi pythonTodo guifg=#bc8865 guibg=NONE
-hi pythonFunction guifg=#7bbbce guibg=NONE
+hi pythonFunction guifg=#9bbec6 guibg=NONE
 
 " SHELL SCRIPT:
 hi shCmdSubRegion guifg=#c2d5d6 guibg=NONE
@@ -186,14 +181,13 @@ hi shTestOpr guifg=#c2d5d6 guibg=NONE
 hi shDerefVar guifg=#9bbec6 guibg=NONE
 
 " RUST:
-hi rustStorage guifg=#d0bf97 guibg=NONE
+hi rustStorage guifg=#9bbec6 guibg=NONE
 hi rustTrait guifg=#bc8865 guibg=NONE
 hi rustSigil guifg=#bc8865  guibg=NONE
 hi rustType guifg=#bc8865 guibg=NONE
 hi rustFoldBraces guifg=#d2c7ba guibg=NONE
-hi rustFuncName guifg=#7bbbce guibg=NONE gui=italic
-hi rustFuncCall guifg=#7bbbce guibg=NONE gui=italic
-hi rustBoolean guifg=#c489bd guibg=NONE
+hi rustFuncName guifg=#9bbec6 guibg=NONE gui=italic
+hi rustFuncCall guifg=#9bbec6 guibg=NONE gui=italic
 
 
 " MARKDOWN:

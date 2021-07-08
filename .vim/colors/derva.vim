@@ -1,5 +1,5 @@
 " AUTHOR: Joseph Stameus
-" REPO: https://github.com/JStameus/derva-vim
+" REPO: https://github.com/oxifinch/derva-vim
 "
 " SUPPORT: 
 " 256 color terminals, GVim, Termguicolors
@@ -12,23 +12,14 @@ highlight clear
 	syntax reset
 endif
 
-let g:colors_name="pavilion"
+let g:colors_name="derva"
 
-" ------------------------------------------------------------------------------
-" TODO: Figure out how to color the 'no write since last change' kind of
-" messages
-" TODO: Fix coloring on wildmenu
-" TODO: Fix coloring on plug update brackets
-" TODO: Fix coloring on Vim start screen tags
-" TODO: Make css attributes foreground and values orange
-" TODO: Add proper coloring to javascript todo
 " TODO: Change background color of popup menu
-" TODO: Change "indigo" color to something else/make it stand out more
 " ------------------------------------------------------------------------------
  
 " COLOR CODES:
 " background: #292a2d
-" background highlight: #2d393d
+" background highlight: #303538 
 " background faint: #242b30
 
 " foreground: #e5d1aa
@@ -43,7 +34,7 @@ let g:colors_name="pavilion"
 " red hightlight: #ce5a48
 " orange: #e09f5a
 " green: #ccc578
-" murky: #2d393d
+" murky: #8caaa7
 
 " COMMON:
 hi Normal guifg=#e5d1aa guibg=#292a2d
@@ -87,10 +78,10 @@ hi MatchParen guifg=#b5cdce guibg=#6f7b8c
 hi MoreMsg guifg=#d2c7ba guibg=NONE
 hi NonText guifg=#8d98ab guibg=NONE
 hi SpecialKey guifg=#bd5747 guibg=NONE
-hi Folded guifg=#d2c7ba guibg=#2d393d 
-hi FoldColumn guifg=#d2c7ba guibg=#2d393d 
-hi Visual guifg=#d2c7ba guibg=#6f7b8c
-hi Search guifg=#d2c7ba guibg=#6f7b8c
+hi Folded guifg=#8caaa7 guibg=NONE 
+hi FoldColumn guifg=#8d98ab guibg=NONE 
+hi Visual guifg=#d2c7ba guibg=#4d5457
+hi Search guifg=#d2c7ba guibg=#4d5457
 hi Question guifg=#e8a74c guibg=NONE
 hi Error guifg=#d2c7ba guibg=#cd5148 gui=reverse
 hi ErrorMsg guifg=#d2c7ba guibg=NONE gui=NONE
@@ -105,6 +96,12 @@ hi TabLineSel guifg=#ede5dd guibg=#4f5b66
 hi TabLineFill guifg=#2f3335 guibg=NONE gui=NONE 
 hi StatusLine guifg=#4f5b66 guibg=#ede5dd gui=NONE
 hi StatusLineNC guifg=#3b4449 guibg=#8d98ab
+
+" Integrated terminal
+let g:terminal_ansi_colors = [
+        \ '#292a2d', '#e33400', '#5ccc96', '#b3a1e6', '#00a3cc', '#ce6f8f', '#7a5ccc', '#686f9a',
+        \ '#686f9a', '#e33400', '#5ccc96', '#b3a1e6', '#00a3cc', '#ce6f8f', '#7a5ccc', '#ecf0c1']
+
 " Plugin Specific
 " Vim Plug
 hi plugBracket guifg=#e5d1aa guibg=NONE
@@ -149,29 +146,32 @@ hi htmlLink guifg=#e5d1aa guibg=NONE
 " CSS:
 hi cssTagName guifg=#b2c4c1 guibg=NONE
 hi cssIdentifier guifg=#ccc578 guibg=NONE
-hi cssClassName guifg=#ccc578 guibg=NONE
-hi cssClassNameDot guifg=#ccc578 guibg=NONE
+hi cssClassName guifg=#bd5747 guibg=NONE
+hi cssClassNameDot guifg=#bd5747 guibg=NONE
 hi cssBraces guifg=#ede5dd guibg=NONE
-hi cssAttrComma guifg=#ede5dd guibg=NONE
+hi cssNoise guifg=#ede5dd guibg=NONE
+hi cssAttrComma guifg=#e5d1aa guibg=NONE
 hi cssCustomProp guifg=#e5d1aa guibg=NONE
-hi cssBoxProp guifg=#ede5dd guibg=NONE
-hi cssFlexibleBoxProp guifg=#ede5dd guibg=NONE
-hi cssFontProp guifg=#ede5dd guibg=NONE
-hi cssBackgroundProp guifg=#ede5dd guibg=NONE
-hi cssPositioningProp guifg=#ede5dd guibg=NONE
-hi cssBorderProp guifg=#ede5dd guibg=NONE
-hi cssMediaProp guifg=#ede5dd guibg=NONE
-hi cssTextProp guifg=#ede5dd guibg=NONE
-hi cssUIProp guifg=#ede5dd guibg=NONE
-hi cssListProp guifg=#ede5dd guibg=NONE
+hi cssBoxProp guifg=#e5d1aa guibg=NONE
+hi cssFlexibleBoxProp guifg=#e5d1aa guibg=NONE
+hi cssFontProp guifg=#e5d1aa guibg=NONE
+hi cssBackgroundProp guifg=#e5d1aa guibg=NONE
+hi cssPositioningProp guifg=#e5d1aa guibg=NONE
+hi cssBorderProp guifg=#e5d1aa guibg=NONE
+hi cssMediaProp guifg=#e5d1aa guibg=NONE
+hi cssTextProp guifg=#e5d1aa guibg=NONE
+hi cssUIProp guifg=#e5d1aa guibg=NONE
+hi cssListProp guifg=#e5d1aa guibg=NONE
 hi cssString guifg=#ccc578 guibg=NONE
-hi cssTransitionProp guifg=#ede5dd guibg=NONE
-hi cssColorProp guifg=#ede5dd guibg=NONE
+hi cssTransitionProp guifg=#e5d1aa guibg=NONE
+hi cssColorProp guifg=#e5d1aa guibg=NONE
 hi cssAtKeyword guifg=#bd5747 guibg=NONE
-hi cssPseudoClassId guifg=#ede5dd guibg=NONE
+hi cssPseudoClassId guifg=#e5d1aa guibg=NONE
 hi cssFlexibleBoxAttr guifg=#e09f5a guibg=NONE
 hi cssBorderAttr guifg=#e09f5a guibg=NONE
 hi cssMultiColumnAttr guifg=#e09f5a guibg=NONE
+hi cssMultiColumnAttr guifg=#e09f5a guibg=NONE
+hi cssGridProp guifg=#e5d1aa guibg=NONE
 
 " JAVASCRIPT:
 hi javaScript guifg=#e5d1aa guibg=NONE
@@ -186,10 +186,13 @@ hi jsParens guifg=#ede5dd guibg=NONE
 hi jsBrackets guifg=#ede5dd guibg=NONE
 hi jsFunctionParens guifg=#ede5dd guibg=NONE
 hi jsFunctionBraces guifg=#ede5dd guibg=NONE
+hi jsDestructuringBraces guifg=#ede5dd guibg=NONE
+hi jsExceptionBraces guifg=#ede5dd guibg=NONE
 hi jsIfBraces guifg=#ede5dd guibg=NONE
 hi jsObjectBraces guifg=#ede5dd guibg=NONE
 hi jsLoopBraces guifg=#ede5dd guibg=NONE
 hi jsClassBraces guifg=#ede5dd guibg=NONE
+hi jsSwitchBraces guifg=#ede5dd guibg=NONE
 hi jsBuiltinValues guifg=#e09f5a guibg=NONE
 hi jsVariableType guifg=#bd5747 guibg=NONE
 hi jsFunctionCall guifg=#b2c4c1 guibg=NONE
@@ -200,10 +203,15 @@ hi jsNewClassName guifg=#e09f5a guibg=NONE
 hi jsNewClassName guifg=#e09f5a guibg=NONE
 hi jsBuiltinObjects guifg=#e09f5a guibg=NONE
 hi jsCommentTodo guifg=#8d98ab guibg=NONE
+hi jsImport guifg=#bd5747 guibg=NONE
+hi jsFrom guifg=#bd5747 guibg=NONE
+hi jsModuleName guifg=#e09f5a guibg=NONE
+hi jsArrow guifg=#ede5dd guibg=NONE
 
 " JSON:
 hi jsonBraces guifg=#ede5dd guibg=NONE
 hi jsonKeyword guifg=#bd5747 guibg=NONE
+hi jsonNull guifg=#e09f5a guibg=NONE
 
 " PYTHON:
 hi pythonInclude guifg=#bd5747 guibg=NONE
