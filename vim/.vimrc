@@ -55,7 +55,7 @@ set completeopt+=preview     " Show more information about highlighted menu item
 "   == Text Display Settings ==
 syntax on                    " Enable syntax highlighting
 set linebreak                " Break lines instead of going off screen
-set showbreak=..            " Override line break sign to three dots
+set showbreak=~~             " Override line break sign to two tildes
 set textwidth=80             " Make text break at 80 characters width
 set showmatch                " Highlight matching braces/parentheses etc
 set expandtab                " Replace tab characters with spaces
