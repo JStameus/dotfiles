@@ -146,10 +146,10 @@ iabbrev git# https://github.com/oxifinch
 "-----------------------------------
 call plug#begin('~/.vim/plugged')
 " == Installed ==
-" coc.nvim         Autocompletion and suggestions for code editing
-" rust.vim         Enables syntax highlighting, formatting etc for Rust
-" vim-js           Enables better syntax highlighting for JavaScript
-" vimwiki          Personal text-based wiki
+" coc.nvim              Autocompletion and suggestions for code editing
+" rust.vim              Enables syntax highlighting, formatting etc for Rust
+" vim-js                Enables better syntax highlighting for JavaScript
+" vimwiki               Personal text-based wiki
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
 Plug 'yuezk/vim-js'

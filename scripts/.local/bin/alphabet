@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+# Prints out the swedish alphabet because I can't memorize it without singing
+# the stupid song in my head.
+
+echo "Ab  Bb  Cc  Dd  Ee  Ff  Gg"
+
+echo "Hh  Ii  Jj  Kk  Ll  Mm  Nn"
+
+echo "Oo  Pp  Qq  Rr  Ss  Tt  Uu"
+
+echo "Vv  Xx  Yy  Zz  Åå  Ää  Öö"

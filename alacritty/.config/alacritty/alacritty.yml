@@ -22,8 +22,8 @@ window:
     y: 2
 
 dimensions:
-  columns: 75
-  lines: 35
+  columns: 80
+  lines: 45
 
 #--------------------------------
 
