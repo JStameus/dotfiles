@@ -137,8 +137,8 @@ nnoremap <F3> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> t
 nnoremap <Leader>html :-1read $HOME/.vim/snippets/html/boilerplate<CR>4jf>a
 
 "   == Signatures ==
-" @@               Enter my developer email 
-" @git             Enter my GitHub URL
+" mail#            Enter my developer email 
+" git#             Enter my GitHub URL
 iabbrev mail# oxifinch@protonmail.com
 iabbrev git# https://github.com/oxifinch
 
