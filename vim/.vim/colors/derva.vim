@@ -99,8 +99,8 @@ hi StatusLineNC guifg=#3b4449 guibg=#8d98ab
 
 " Integrated terminal
 let g:terminal_ansi_colors = [
-        \ '#292a2d', '#e33400', '#5ccc96', '#b3a1e6', '#00a3cc', '#ce6f8f', '#7a5ccc', '#686f9a',
-        \ '#686f9a', '#e33400', '#5ccc96', '#b3a1e6', '#00a3cc', '#ce6f8f', '#7a5ccc', '#ecf0c1']
+        \ '#242b30', '#bd5747', '#ccc578', '#e09f5a', '#82a6b1', '#c07e8c', '#82b1b1', '#ede5dd',
+        \ '#25272b', '#d75743', '#dcd371', '#ec9857', '#b2c4c1', '#d78392', '#85d0d0', '#a4a9b1']
 
 " Plugin Specific
 " Vim Plug
@@ -137,9 +137,9 @@ hi helpExample guifg=#ede5dd guibg=NONE
 " HTML:
 hi htmlTag guifg=#ede5dd guibg=NONE
 hi htmlEndTag guifg=#ede5dd guibg=NONE
-hi htmlTagName guifg=#b2c4c1 guibg=NONE
+hi htmlTagName guifg=#e09f5a guibg=NONE
 hi htmlSpecialTagName guifg=#b2c4c1 guibg=NONE
-hi htmlArg guifg=#bd5747 guibg=NONE
+hi htmlArg guifg=#b2c4c1 guibg=NONE
 hi htmlTitle guifg=#ede5dd guibg=NONE
 hi htmlLink guifg=#e5d1aa guibg=NONE
 
